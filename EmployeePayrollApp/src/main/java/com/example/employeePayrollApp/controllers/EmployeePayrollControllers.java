@@ -18,7 +18,6 @@ import com.example.employeePayrollApp.dto.EmployeePayrollDTO;
 import com.example.employeePayrollApp.dto.ResponseDTO;
 import com.example.employeePayrollApp.model.EmployeePayrollData;
 import com.example.employeePayrollApp.services.IEmployeePayrollService;
-
 @RestController
 @RequestMapping("/payrollService")
 public class EmployeePayrollControllers {
