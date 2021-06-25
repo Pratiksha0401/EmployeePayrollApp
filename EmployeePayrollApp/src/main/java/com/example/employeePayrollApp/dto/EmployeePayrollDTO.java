@@ -1,5 +1,7 @@
 package com.example.employeePayrollApp.dto;
 
+import javax.validation.constraints.Pattern;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
