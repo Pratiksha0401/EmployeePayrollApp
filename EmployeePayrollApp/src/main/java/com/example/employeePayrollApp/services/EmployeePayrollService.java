@@ -47,7 +47,8 @@ private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 
 	@Override
 	public void deleteEmployeePayrollData(int empId) {
-		employeePayrollList.remove(empId-1);
+		EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
+		employeePayrollList.remove(empData);
 	}
 
 }
