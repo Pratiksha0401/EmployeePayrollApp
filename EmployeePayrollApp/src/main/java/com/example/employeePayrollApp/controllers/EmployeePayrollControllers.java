@@ -21,7 +21,7 @@ import com.example.employeePayrollApp.dto.ResponseDTO;
 import com.example.employeePayrollApp.model.EmployeePayrollData;
 import com.example.employeePayrollApp.services.IEmployeePayrollService;
 @RestController
-@RequestMapping("/payrollService")
+@RequestMapping("/payrollservice")
 public class EmployeePayrollControllers {
 	
 	@Autowired
