@@ -1,5 +1,6 @@
 package com.example.employeePayrollApp.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.example.employeePayrollApp.dto.EmployeePayrollDTO;
@@ -15,7 +16,7 @@ public class EmployeePayrollData {
 	private String name;
 	private long salary;
 	public String gender;
-	public String startDate;
+	public LocalDate startDate;
 	public String note;
 	public String profilePic;
 	public List<String> departments; 
