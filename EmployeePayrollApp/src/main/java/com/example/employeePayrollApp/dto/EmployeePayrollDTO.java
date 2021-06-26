@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
@@ -40,7 +41,7 @@ public class EmployeePayrollDTO {
 	@NotBlank(message="profilePic cannot be empty")
 	public String profilePic;
 	
-	@NotNull(message="department should not be empty")
+	@NotEmpty(message="department should not be empty")
 	public List<String> departments;
 	
 }
