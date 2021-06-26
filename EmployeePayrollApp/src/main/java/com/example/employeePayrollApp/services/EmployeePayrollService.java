@@ -39,9 +39,13 @@ private List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 	@Override
 	public EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO empPayrollDTO) {
 		EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
-		empData.setName(empPayrollDTO.name);
-		empData.setSalary(empPayrollDTO.salary);
-		return employeePayrollList.set(empId-1, empData);
+		empData.setGender(empPayrollDTO.gender);
+		empData.setStartDate(empPayrollDTO.startDate);
+		empData.setNote(empPayrollDTO.note);
+		empData.setProfilePic(empPayrollDTO.profilePic);
+		empData.setDepartments(empPayrollDTO.departments);
+		employeePayrollList.set(empId-1, empData);
+		return empData;
 		
 	}
 

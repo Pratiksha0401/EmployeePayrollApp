@@ -27,7 +27,6 @@ public class EmployeePayrollControllers {
 	@Autowired
 	private IEmployeePayrollService employeePayrollService;
 	
-	//curl "localhost:8080/payrollService/" -w "\n"
 	@RequestMapping(value= {"","/","/get"})
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
 		List<EmployeePayrollData> empDataList = null;
@@ -36,7 +35,7 @@ public class EmployeePayrollControllers {
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 	
-	//curl "localhost:8080/payrollService/get/1" -w "\n"
+	
 	@GetMapping("/get/{empId}")
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empId) {
 		EmployeePayrollData empData = null;
@@ -45,9 +44,7 @@ public class EmployeePayrollControllers {
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 	
-	/*curl -X POST -H "Content-Type:application/json" -d '{"name":"Lisa","salary":"30000"}' 
-	 * "http://localhost:8080/payrollService/create" -w "\n"
-	 */
+
 	@PostMapping("/create")
 	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
 		EmployeePayrollData empData = null;
@@ -56,9 +53,7 @@ public class EmployeePayrollControllers {
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 	
-	/* curl -X PUT -H "Content-Type:application/json" -d '{"name":"Lisa","salary":"20000"}' 
-	 * "http://localhost:8080/payrollService/update/1" -w "\n"
-	 */
+
 	@PutMapping("/update/{empId}")
 	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
 			                                                     @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
@@ -68,8 +63,7 @@ public class EmployeePayrollControllers {
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 	
-	/*curl -X DELETE -H "Content-Type: application/json" localhost:8080/payrollService/delete/1 -w "\n"
-	 */
+
 	@DeleteMapping("/delete/{empId}")
 	public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("empId") int empId) {
 		employeePayrollService.deleteEmployeePayrollData(empId);
