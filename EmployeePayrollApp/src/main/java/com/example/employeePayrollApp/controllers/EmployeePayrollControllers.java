@@ -27,7 +27,7 @@ public class EmployeePayrollControllers {
 	@Autowired
 	private IEmployeePayrollService employeePayrollService;
 	
-	@RequestMapping(value= {"","/","/get"})
+	@GetMapping(value= {"","/","/get"})
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
 		List<EmployeePayrollData> empDataList = null;
 		empDataList = employeePayrollService.getEmployeePayrollData();
@@ -76,6 +76,14 @@ public class EmployeePayrollControllers {
 		List<EmployeePayrollData> empDataList = null;
 		empDataList = employeePayrollService.getEmployeesByDepartment(department);
 		ResponseDTO respDTO = new ResponseDTO("Get Call for Department Successful", empDataList);
+		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getByNameKeyword/{namekeyword}")
+	public ResponseEntity<ResponseDTO> getAddressbookDataByNameKeyword(@PathVariable("namekeyword") String namekeyword){
+		List<EmployeePayrollData> bookDataList = null;
+		bookDataList = employeePayrollService.getEmployeePayrollDataByNameKeyword(namekeyword);
+		ResponseDTO respDTO = new ResponseDTO("Get Call for get data by keyword", bookDataList);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 	}
 }

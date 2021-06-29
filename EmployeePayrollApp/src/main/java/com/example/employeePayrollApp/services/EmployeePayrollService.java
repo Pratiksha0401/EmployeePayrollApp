@@ -56,4 +56,9 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 		return employeeRepository.findEmployeesByDepartment(department);
 	}
 
+	@Override
+	public List<EmployeePayrollData> getEmployeePayrollDataByNameKeyword(String namekeyword) {
+		return employeeRepository.getEmployeepayrollDataByNameKeyword(namekeyword);
+	}
+
 }
